@@ -5,6 +5,7 @@ pipeline {
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
     }
   }
+
   
   stages {
     stage('Checkout') {
@@ -56,7 +57,7 @@ pipeline {
 
                 echo "Repository Contents:"
                 ls -la
-
+                git config --global --add safe.directory /var/lib/jenkins/workspace/Java_Maven
                 git config --global user.email "hrithikg121@gmail.com"
                 git config --global user.name "Hr1thik"
 
